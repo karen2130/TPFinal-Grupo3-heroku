@@ -1,0 +1,67 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+#form {
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+#form p {
+  text-align: center;
+  font-size: 200px;
+}
+
+#form label {
+  font-size: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  font-size: 30px;
+}
+
+label:hover,
+label:hover ~ label {
+  color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+.carta {
+	box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
+	background: rgba(255, 255, 255, 0.90);
+	text-align: center;
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 5em auto;
+	height: 400px;
+	width: 1000px;
+	
+	/* padding: 10px 10px 10px 20px;
+    height: 700px;
+	max-width: 1000px;
+	position: relative;
+	top: 20px; 
+    left: 100px;
+    */
+}
+
+.caja{
+	text-align: center;
+	
+}

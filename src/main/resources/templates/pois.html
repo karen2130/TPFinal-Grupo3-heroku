@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+	<link th:rel="stylesheet" type="text/css" th:href="@{/css/estilozoe.css}" />
+	<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+	<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} " />
+
+<meta charset="UTF-8">
+<title>PoIs</title>
+</head>
+<body>
+	<div th:insert="layouts/header :: header"></div>
+
+  
+  
+  <div class="dropdown">
+      <a class="dropdown-toggle btn btn-secondary " style="color:#ffffff" aria-expanded="false" data-toggle="dropdown"> Ordenar Por</a>
+      <div class="dropdown-menu dropdown-menu-end">
+        <a class="dropdown-item" href="/poI/mostrar"><i class="fas fa-list-alt"></i> Todos</a>
+        <a class="dropdown-item" href="/poI/mostrarValorados"><i class="fas fa-star"></i>  Mas
+					Valorados</a>
+		<a class="dropdown-item" href="/poI/mostrarAlfabeto"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sort-alpha-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10.082 5.629 9.664 7H8.598l1.789-5.332h1.234L13.402 7h-1.12l-.419-1.371h-1.781zm1.57-.785L11 2.687h-.047l-.652 2.157h1.351z"/>
+  <path d="M12.96 14H9.028v-.691l2.579-3.72v-.054H9.098v-.867h3.785v.691l-2.567 3.72v.054h2.645V14zM4.5 2.5a.5.5 0 0 0-1 0v9.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L4.5 12.293V2.5z"/>
+</svg> Nombre</a>		
+      </div>
+      </div>
+  
+	<div class="album py-5">
+		<div class="container">
+		
+			<div class="row row-cols-1 row-cols-sm-3 g-3">
+				<div th:each="p : ${poIs}">
+					<div class="col lg-4 mb-4">
+						<div class="card border border-dark">
+							<img onerror="this.src='/img/recursolisto.png';" th:src="*{'data:;base64,'+p.imagen}" class="card-img-top" style="height:300px">
+							<!--  <img th:src="*{'data:;base64,'+p.fotografias.get('0').imagen}" class="card-img-top" alt="hola"> -->
+						</div>
+						<div class="card-body border border-dark">
+							<span class="badge bg-success text-light" th:text="${p.etiqueta}"></span>
+							<p class="card-text" th:text="${p.nombrePoI}"></p>
+							<p class="card-text" th:text="${p.descripcion}"></p>
+							<div class="d-flex justify-content-between align-items-center">
+								<div class="btn-group">
+									<a class="btn btn-sm btn-outline-secondary"
+										th:href="@{'/valoracion/mostrar/'+${p.codigoPoI}}">Ver Mas</a>
+								</div>
+								<small class="text-muted" th:text="${p.localidad}"></small>
+							</div>
+						</div>
+					</div>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div th:insert="layouts/footer :: footer"></div>
+
+	 <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<!--	<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}" type="text/javascript" src="webjars/popper.js/1.16.0/popper.min.js"></script> -->
+		<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}" type="text/javascript" src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

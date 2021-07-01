@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="headerRoot" th:fragment="header">
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="/turista/mostrar">Turistas</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/poI/cargarRoot">Puntos de Interes</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/valoracion/vistaRoot">Comentarios y Valoraciones</a>
+  </li>
+  <li class="nav-item">
+    <a class="dropdown-item" href="#" th:href="@{/logout}">Cerrar Sesion <i class="fas fa-sign-out-alt"></i></a>
+  </li>
+</ul>
+</div>
+</body>
+</html>

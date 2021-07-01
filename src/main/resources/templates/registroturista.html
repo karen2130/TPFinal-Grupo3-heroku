@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<link th:rel="stylesheet" type="text/css" th:href="@{/css/estilo.css}" />
+<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} " />
+
+<meta charset="UTF-8">
+<title>Registrarse</title>
+</head>
+<body>
+
+
+    <br>
+ <div class="container">
+   
+    <h1 style="text-align: center">Registro</h1>
+	<form th:object="${unTurista}" th:action="@{/registrar/guardar}" method="post">
+       
+      <div class="row mb-3"> 
+       
+       <div class="form-group col-12 col-md-12">
+        <label for="nombre" class="form-label">Nombre</label>
+             <input type="text" class="form-control" placeholder="Ingrese un nombre"  th:field="*{nombre}">
+             <small class="alert alert-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+       </div>
+       
+       <div class="form-group col-12 col-md-12">
+        <label for="apellido" class="form-label">Apellido</label>
+             <input type="text" class="form-control" placeholder="Ingrese un apellido"  th:field="*{apellido}">
+             <small class="alert alert-danger" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></small>
+       </div>
+       
+       <div class="form-group col-12 col-md-12">
+					<label class="form-label" >Pais</label>
+					<div class="dropdown bootstrap-select" style="width: 100%;">
+						<select class="form-control" data-width="100%" th:field="*{pais}">
+								<option value="">Seleccionar</option>
+								<option value="Argentina">Argentina</option>
+								<option value="Brasil">Brasil</option>
+					     		<option value="Alemania">Alemania</option>
+						</select>
+					</div>
+		</div>
+      
+       
+       <div class="form-group col-12 col-md-12">
+        <label for="email" class="form-label">Email</label>
+             <input type="email" class="form-control" placeholder="nombre@gmail.com" aria-label="Email" th:field="*{email}">
+             <small class="alert alert-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small>
+
+       </div>
+       
+       
+       <div class="form-group col-12 col-md-12">
+        <label for="password" class="form-label">Contraseña</label>
+           <input type="password" class="form-control" placeholder="Ingrese una contraseña" aria-label="password" th:field="*{password}">
+           <small class="alert alert-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>
+       </div>
+       
+       
+    </div>	
+    
+    <div class="form-group row">
+				<div class="col-sm-6">
+				        <input type="submit" class="btn btn-success "  value="Registrarse">
+				</div>
+       </div>
+       <br>
+       
+	</form>
+		
+    </div>
+
+<script type="text/javascript">
+
+(function () {
+   'use strict'
+    var forms = document.querySelectorAll('.needs-validation')
+    Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+
+</script>
+
+
+        <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
+		<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}" type="text/javascript" src="webjars/popper.js/1.16.0/popper.min.js"></script>
+		<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}" type="text/javascript" src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

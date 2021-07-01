@@ -1,0 +1,103 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+
+.container.col:hover{
+     transform: scale(1.1);
+     box-shadow: 3px 3px 10px rgba(0,0,0,0.6);
+} 
+
+
+ h1 {
+	margin: 0;
+    text-align: center;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.body-home {
+  font-family: "Open Sans", sans-serif;
+  background-position : center;
+  background-image: url("/img/jujuyinicio.gif");
+  background-size: cover;
+ 
+}
+
+.body-inicio {
+	background: url(https://img.vixdata.io/pd/webp-large/es/sites/default/files/imj/nuestrorumbo/K/Krabi-en-Tailandia-2.jpg) 50% fixed;
+    background-size: cover;
+}
+
+
+.login-box {
+	
+  padding: 10px 20px 20px 20px;
+  width: 90%;
+  max-width: 350px;
+  background: #ffffff;
+  position: relative;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+  opacity: 0.9;
+  top: 50px; 
+  left: 400px;
+  
+ }
+ 
+ .inicio-box {
+	
+  padding: 80px 20px 20px 20px;
+  width: 90%;
+  max-width: 500px;
+  background: #ffffff;
+  position: relative;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+  opacity: 0.6;
+  top: 100px; 
+  left: 300px;
+  
+ }
+ 
+ .lead {
+  text-align: center;
+  font-size: 16pt;
+ }
+ 
+ .inicio-box a{
+   
+   position: relative;
+   top: 20px; 
+   left: 150px;
+ }
+ 
+.app-title {
+  text-align: center;
+  color: #000000;
+}
+
+img{
+  display:block;
+  margin:auto;
+}
+
+.puntos{
+  padding: 20px 20px 20px 20px;
+  width: 90%;
+  height:90px;
+  background: #0080ff;
+  position: relative;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+  opacity: 0.6;
+  top: 10px; 
+  left: 50px;
+  
+}
+
+.puntos h1{
+	color: white;
+}
+
+
+
